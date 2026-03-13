@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagementAPI.Data;
+using TaskManagementAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//register auth service
+builder.Services.AddScoped<IAuthService, AuthService>();
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

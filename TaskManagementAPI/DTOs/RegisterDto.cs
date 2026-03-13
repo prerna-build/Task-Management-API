@@ -13,7 +13,7 @@ namespace TaskManagementAPI.DTOs
         public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "password is required")]
-        [StringLength(100, MinimumLength = 6, ErrorMessage = "password mjust be atleast 6 letters")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "password must be atleast 6 letters")]
         public string Password { get; set; } = string.Empty;
     }
 }
